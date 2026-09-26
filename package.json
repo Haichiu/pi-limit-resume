@@ -1,0 +1,25 @@
+{
+	"name": "pi-limit-resume",
+	"version": "0.1.0",
+	"description": "Pi extension: when a subscription's 5-hour usage window runs out, wait for the reset and send one `continue` in the same session.",
+	"type": "module",
+	"keywords": ["pi-package", "pi-extension", "usage-limit", "rate-limit", "codex", "claude", "auto-continue"],
+	"license": "MIT",
+	"author": "HanChingCheng",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Haichiu/pi-limit-resume.git"
+	},
+	"pi": {
+		"extensions": ["./extensions/limit-resume/index.ts"]
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*"
+	},
+	"devDependencies": {
+		"vitest": "~3.2"
+	},
+	"scripts": {
+		"test": "vitest run"
+	}
+}
