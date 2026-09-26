@@ -71,6 +71,12 @@ npm test
 
 The RPC wiring test starts the `pi` CLI against a local mock provider, and is skipped if `pi` is not on PATH. It proves pi's lifecycle wiring only, not the real provider transports.
 
+## Field test
+
+On 2026-09-26, a real ChatGPT-subscription run (`openai-codex`, `gpt-6-astra`) hit the 5-hour limit at 23:15 local time. The error was `Codex error: The usage limit has been reached`, with no reset time. The extension read the usage endpoint (5-hour window 100% used, weekly 43%) and scheduled the continuation for 03:45, the reset plus margin. At 03:45:10 it sent one `continue`, and the resumed request on the same model succeeded at 03:45:33.
+
+That is one observed cycle on one provider. The Anthropic, GLM and OpenCode Go paths are covered by tests built on real or documented error strings, not by a live cycle.
+
 ## License
 
 MIT
